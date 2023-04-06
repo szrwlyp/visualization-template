@@ -2,7 +2,7 @@
 import { ref, reactive, onMounted } from "vue";
 import Charts from "@/components/eCharts/index.vue";
 import type { chartBaseOptionsType } from "@/typings/eCharts";
-import { demo1, demo2 } from "@/models/eCharts/demo";
+import { demo1, demo2, demo3 } from "@/models/eCharts/demo";
 
 const chartBaseOptions = reactive<chartBaseOptionsType>({
   chartsId: "test",
@@ -12,18 +12,22 @@ const chartBaseOptions1 = reactive<chartBaseOptionsType>({
   chartsId: "test1",
   setOptionsData: demo1,
 });
+const chartBaseOptions2 = reactive<chartBaseOptionsType>({
+  chartsId: "test2",
+  setOptionsData: demo3,
+});
 
 onMounted(() => {
-  setTimeout(() => {
-    demo2.series = [
-      {
-        name: "销量1",
-        type: "bar",
-        data: [100, 20, 36, 10, 10, 20],
-      },
-    ];
-    // setOptionsData.value = demo2;
-  }, 2000);
+  // setTimeout(() => {
+  //   demo2.series = [
+  //     {
+  //       name: "销量1",
+  //       type: "bar",
+  //       data: [100, 20, 36, 10, 10, 20],
+  //     },
+  //   ];
+  //   // setOptionsData.value = demo2;
+  // }, 2000);
 });
 </script>
 
@@ -50,7 +54,9 @@ onMounted(() => {
         <div>内容待定</div>
         <div>更多</div>
       </div>
-      <div class="left_item_content">bb</div>
+      <div class="left_item_content">
+        <Charts :chartBaseOptions="chartBaseOptions2"></Charts>
+      </div>
     </div>
     <div class="center_item">
       <div class="data">
@@ -66,7 +72,7 @@ onMounted(() => {
       <div class="information">
         <!-- <div class="business-style">企业信息</div> -->
       </div>
-      <div class="project">4</div>
+      <div class="project"></div>
     </div>
     <div class="item_3">
       <div>
@@ -159,14 +165,14 @@ main {
       padding: 0 64px;
       justify-content: space-between;
       margin-top: vh(16);
-      font-size: 15px;
+      font-size: vw(15);
       & > div:nth-child(1) {
-        width: 269px;
+        width: vw(269);
         display: flex;
         justify-content: space-around;
       }
       & > div:nth-child(2) {
-        width: 88px;
+        width: vw(88);
         display: flex;
         justify-content: space-around;
       }

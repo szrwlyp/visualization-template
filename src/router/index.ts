@@ -9,12 +9,12 @@ const router = new VueRouter({
   base: import.meta.env.BASE_URL,
   routes: [
     {
-      path: "/home",
+      path: "/index",
       name: "index",
       component: Index,
     },
     {
-      path: "/",
+      path: "/home",
       name: "home",
       component: HomeView,
     },

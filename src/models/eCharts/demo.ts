@@ -196,7 +196,106 @@ export const demo2 = {
     {
       name: "销量",
       type: "bar",
+      itemStyle: {
+        // 颜色渐变函数，前四个参数分别表示四个位置，依次为：右下左上
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color: "#83bff6" },
+          { offset: 0.5, color: "#188df0" },
+          { offset: 1, color: "#188df0" },
+        ]),
+      },
+      // emphasis: {
+      //   itemStyle: {
+      //     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      //       { offset: 0, color: "#2378f7" },
+      //       { offset: 0.7, color: "#2378f7" },
+      //       { offset: 1, color: "#83bff6" },
+      //     ]),
+      //   },
+      // },
+
       data: [5, 20, 36, 10, 10, 20],
+    },
+  ],
+};
+export const demo3 = {
+  // tooltip: {
+  //   trigger: 'item',
+  //   formatter: '{a} <br/>{b} : {c} ({d}%)'
+  // },
+  // legend: {
+  //   left: "center",
+  //   top: "bottom",
+  //   data: [
+  //     "rose1",
+  //     "rose2",
+  //     "rose3",
+  //     "rose4",
+  //     "rose5",
+  //     "rose6",
+  //     "rose7",
+  //     "rose8",
+  //   ],
+  // },
+  // toolbox: {
+  //   show: true,
+  //   feature: {
+  //     mark: { show: true },
+  //     dataView: { show: true, readOnly: false },
+  //     restore: { show: true },
+  //     saveAsImage: { show: true },
+  //   },
+  // },
+  series: [
+    {
+      name: "Area Mode",
+      type: "pie",
+      radius: [20, 90],
+      // center: ["75%", "50%"],
+      roseType: "area",
+      itemStyle: {
+        // borderRadius: 5,
+      },
+      zlevel: 10,
+      data: [
+        { value: 30, name: "rose 1" },
+        { value: 28, name: "rose 2" },
+        { value: 26, name: "rose 3" },
+        { value: 24, name: "rose 4" },
+        // { value: 22, name: "rose 5" },
+        // { value: 20, name: "rose 6" },
+        // { value: 18, name: "rose 7" },
+        // { value: 16, name: "rose 8" },
+      ],
+    },
+    {
+      name: "外边框",
+      type: "pie",
+      tooltip: {
+        show: false,
+      },
+      clockWise: false, //顺时加载
+      hoverAnimation: false, //鼠标移入变大
+      // center:['50%','50%'],//这里跟上面那组一样即可
+      radius: [80, 80], //这里根据自己的需要自行调整，但是两个值要一样大哦，如果小于上方设置的最小内圆30%则为内阴影，大于外圆60%则为外阴影
+      label: {
+        normal: {
+          show: false, //重点：此处主要是为了不展示data中的value和name
+        },
+      },
+      data: [
+        {
+          value: 1, //此处的值无所谓是多少
+          name: "", //因为不展示label，可不填
+          itemStyle: {
+            //边框样式，此处我们设置的浅蓝色，颜色可自行修改
+            normal: {
+              borderWidth: 45, //边框宽度
+              borderColor: "rgba(94, 183, 249,  0.13)", //边框颜色
+            },
+          },
+        },
+      ],
     },
   ],
 };

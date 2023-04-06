@@ -4,6 +4,7 @@ import { fromEvent, debounceTime } from "rxjs";
 import * as echarts from "echarts/core";
 import {
   BarChart,
+  PieChart,
   // 系列类型的定义后缀都为 SeriesOption
   BarSeriesOption,
   LineChart,
@@ -47,6 +48,7 @@ echarts.use([
   DatasetComponent,
   TransformComponent,
   BarChart,
+  PieChart,
   LineChart,
   LabelLayout,
   UniversalTransition,
