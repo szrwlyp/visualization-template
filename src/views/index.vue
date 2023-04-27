@@ -7,7 +7,7 @@ const swiperOption = {
     loadPrevNext: true,
   },
   direction: "horizontal", // 水平切换选项
-  loop: true, // 循环模式选项
+  loop: false, // 循环模式选项
   //切换效果   3d流
   effect: "coverflow",
   //为true默认居中 默认居左
